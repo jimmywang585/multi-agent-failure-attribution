@@ -1,0 +1,24 @@
+{
+  "log_id": "toy-001",
+  "query": "Find the cheapest round-trip flight from City A to City B within next month.",
+  "steps": [
+    {
+      "agent": "Orchestrator",
+      "text": "Break down the task and assign to web and budget agents."
+    },
+    {
+      "agent": "WebSurfer",
+      "text": "Searched flights but filtered one-way only by mistake."
+    },
+    {
+      "agent": "Budgeter",
+      "text": "Compared prices but used the one-way results as round-trip."
+    },
+    {
+      "agent": "Orchestrator",
+      "text": "Decided final plan using incorrect price summary."
+    }
+  ],
+  "gold_agent": "WebSurfer",
+  "gold_step_index": 1
+}

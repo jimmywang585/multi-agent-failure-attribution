@@ -1,0 +1,35 @@
+seed: 42
+epochs: 3
+batch_size: 1
+max_steps_per_log: 130
+epsilon: 1e-6
+
+models:
+  - microsoft/Phi-3-mini-4k-instruct
+  - TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  - Qwen/Qwen2.5-1.5B-Instruct
+  - google/gemma-2-2b-it
+  - mistralai/Mistral-7B-Instruct-v0.3
+
+gen:
+  max_new_tokens: 256
+  do_sample: false
+  temperature: 0.0
+  top_p: 1.0
+
+bt:
+  max_iter: 200
+  tol: 1e-6
+  l2_reg: 1e-4
+
+reward_weights:
+  beta_pair: 1.0
+  beta_step: 1.0
+  beta_agent: 0.5
+  entropy_step: 0.01
+  entropy_agent: 0.005
+
+mirror_descent:
+  lr: 0.3
+  min_temp: 0.25
+  max_temp: 4.0
