@@ -1,0 +1,11 @@
+# Which dataset split to evaluate (train / val / test)
+data_split: train
+
+# Base multi-model configuration file
+base_config: config.yaml
+
+# Number of epochs (no learning; 1 = one full pass)
+epochs: 1
+
+# Where to save results, logs, and configs
+out_dir: runs/baseline

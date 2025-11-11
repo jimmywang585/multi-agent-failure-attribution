@@ -76,9 +76,7 @@ def main():
 
                 # Parse and coerce ratings
                 T = len(steps)
-                # existing parser: assume upstream convert-to-scores logic lives here
-                # Keep previous behavior (your run_rating returns text; downstream code expects list of floats)
-                # For compatibility, try a quick float scrape; otherwise fallback to zeros.
+
                 scores = []
                 for token in out.split():
                     try:
@@ -135,7 +133,6 @@ def main():
             if metrics:
                 print(f"[{row.get('log_id','-')}] step_acc={metrics.get('acc_step')} agent_acc={metrics.get('acc_agent')}")
 
-            # Keep memory tidy on long runs without measurable slowdown
             _maybe_empty_cache(step_mod=8, i=i)
             if i % 32 == 0:
                 gc.collect()
