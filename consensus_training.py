@@ -95,9 +95,12 @@ def online_consensus_train(
     lambda_mix = float(hyperparams.get("lambda_mix", 0.5))
     
     # Step 1: Initialize K discriminators + optimizers
+    print(f"Initializing {K} discriminators...")
     discriminators = initialize_discriminators(K, model_config)
+    print(f"✓ Initialized {K} discriminators")
+    
     optimizers = []
-    for D_k in discriminators:
+    for k, D_k in enumerate(discriminators):
         optimizer_k = torch.optim.Adam(D_k.parameters(), lr=lr)
         optimizers.append(optimizer_k)
     
@@ -105,15 +108,24 @@ def online_consensus_train(
     for D_k in discriminators:
         D_k.train()
     
+    if torch.cuda.is_available():
+        allocated = torch.cuda.memory_allocated(0) / 1024**3
+        print(f"GPU memory after initialization: {allocated:.2f} GB")
+    
     previous_average_loss = float('inf')
     
     # Step 2: Multi-pass training over epochs
+    print(f"Starting training for up to {num_epochs} epochs on {len(L)} logs...")
     for epoch in range(1, num_epochs + 1):
+        print(f"\nEpoch {epoch}/{num_epochs}")
         total_loss = 0.0
         num_logs = 0
         
         # Loop over each log
         for i in range(len(L)):
+            # Print progress every 10 logs
+            if (i + 1) % 10 == 0 or (i + 1) == len(L):
+                print(f"  Processing log {i+1}/{len(L)}...", end='\r', flush=True)
             log_steps = L[i]
             agent_ids_i = agent_ids[i]
             gt_step = mistake_step[i]
@@ -178,9 +190,17 @@ def online_consensus_train(
         # ---- Compute average loss and early stopping ----
         average_loss = total_loss / max(num_logs, 1)
         
+        # Print epoch summary
+        print(f"\n  Epoch {epoch} complete: Average loss = {average_loss:.6f}")
+        if torch.cuda.is_available():
+            allocated = torch.cuda.memory_allocated(0) / 1024**3
+            reserved = torch.cuda.memory_reserved(0) / 1024**3
+            print(f"  GPU memory: {allocated:.2f} GB allocated, {reserved:.2f} GB reserved")
+        
         # Check for early stopping (loss has stabilized)
         if abs(previous_average_loss - average_loss) < loss_tolerance:
             # Loss has stabilized; stop early
+            print(f"  Early stopping: loss change ({abs(previous_average_loss - average_loss):.8f}) < tolerance ({loss_tolerance})")
             break
         
         previous_average_loss = average_loss
