@@ -39,6 +39,9 @@ def BT_consensus(p_steps_list: List[torch.Tensor]) -> torch.Tensor:
     K = len(p_steps_list)
     T = p_steps_list[0].shape[0]
     
+    # Get device from input tensors
+    device = p_steps_list[0].device
+    
     # Validate all distributions have same length
     for k, p_k in enumerate(p_steps_list):
         if p_k.shape[0] != T:
@@ -74,8 +77,8 @@ def BT_consensus(p_steps_list: List[torch.Tensor]) -> torch.Tensor:
     # BT model: q_bar(s > t) ≈ σ(r_s - r_t) where σ is sigmoid
     # We optimize: sum_{s < t} [ q_bar * log σ(r_s - r_t) + (1 - q_bar) * log σ(r_t - r_s) ]
     
-    # Initialize BT scores r_t (learnable parameters)
-    r = nn.Parameter(torch.zeros(T, requires_grad=True))
+    # Initialize BT scores r_t (learnable parameters) on the same device
+    r = nn.Parameter(torch.zeros(T, requires_grad=True, device=device))
     
     # Optimizer for gradient ascent (maximize log-likelihood)
     optimizer = torch.optim.Adam([r], lr=0.1)

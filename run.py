@@ -18,6 +18,7 @@ Examples:
 
 import argparse
 from pathlib import Path
+import torch
 
 from config_loader import load_config, get_model_config, get_system_config, get_data_config, get_output_config
 from dataset import process_dataset
@@ -202,10 +203,18 @@ def main():
         gt_mistake_agent = [None] * len(L)
     
     # Prepare model config for discriminators
+    # Determine device (use GPU if available)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if torch.cuda.is_available():
+        print(f"Using GPU: {torch.cuda.get_device_name(0)}")
+    else:
+        print("Using CPU (GPU not available)")
+    
     discriminator_model_config = {
         'encoder_type': model_config['encoder_type'],
         'max_length': model_config['max_length'],
-        'd_model': model_config.get('d_model')
+        'd_model': model_config.get('d_model'),
+        'device': device
     }
     
     # Run specified system(s)

@@ -18,18 +18,26 @@ class StepEncoder(nn.Module):
     a tensor of shape [num_steps, d_model].
     """
     
-    def __init__(self, encoder_type: str = "distilbert-base-uncased", max_length: int = 512, d_model: Optional[int] = None):
+    def __init__(self, encoder_type: str = "distilbert-base-uncased", max_length: int = 512, d_model: Optional[int] = None, device: Optional[torch.device] = None):
         """
         Args:
             encoder_type: HuggingFace model identifier (e.g., "distilbert-base-uncased")
             max_length: Maximum sequence length for tokenizer
             d_model: Output embedding dimension (if None, uses model's hidden size)
+            device: Device to load model on (if None, uses CUDA if available, else CPU)
         """
         super().__init__()
+        
+        # Determine device
+        if device is None:
+            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = device
         
         # Load tokenizer and model
         self.tokenizer = AutoTokenizer.from_pretrained(encoder_type)
         self.model = AutoModel.from_pretrained(encoder_type)
+        # Move model to specified device
+        self.model = self.model.to(self.device)
         
         # Set model to eval mode by default (will be set to train mode when needed)
         self.model.eval()
@@ -199,6 +207,7 @@ class Discriminator(nn.Module):
                 - encoder_type: HuggingFace model ID (e.g., "distilbert-base-uncased")
                 - max_length: Maximum sequence length (default: 512)
                 - d_model: Embedding dimension (if None, uses model's hidden size)
+                - device: Device to use (if None, uses CUDA if available, else CPU)
         """
         super().__init__()
         
@@ -209,24 +218,30 @@ class Discriminator(nn.Module):
         encoder_type = model_config.get('encoder_type', 'distilbert-base-uncased')
         max_length = model_config.get('max_length', 512)
         d_model = model_config.get('d_model', None)  # None = use model's hidden size
+        device = model_config.get('device', None)  # None = auto-detect
         
         # Build encoder: steps → embeddings (uses HuggingFace transformers)
-        self.encoder = StepEncoder(encoder_type=encoder_type, max_length=max_length, d_model=d_model)
+        self.encoder = StepEncoder(encoder_type=encoder_type, max_length=max_length, d_model=d_model, device=device)
+        
+        # Move scorer and abstention head to same device as encoder
+        device = self.encoder.device
         
         # Get actual d_model from encoder (may differ from config if using model's hidden size)
         actual_d_model = self.encoder.d_model
         
         # Build scorer: embeddings → logits
         self.scorer = StepScorer(d_model=actual_d_model)
+        self.scorer = self.scorer.to(device)
         
         # Build abstention head: pooled embedding → abstention rate [0,1]
         # Uses mean pooling over step embeddings, then MLP + sigmoid
         self.abstention_head = nn.Sequential(
-            nn.Linear(d_model, d_model // 2),
+            nn.Linear(actual_d_model, actual_d_model // 2),
             nn.ReLU(),
-            nn.Linear(d_model // 2, 1),
+            nn.Linear(actual_d_model // 2, 1),
             nn.Sigmoid()
         )
+        self.abstention_head = self.abstention_head.to(device)
     
     def forward_with_abstention(self, L_i: List[Any]) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         """
