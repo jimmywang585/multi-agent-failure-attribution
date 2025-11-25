@@ -38,7 +38,7 @@ system:
   system_type: "consensus"
   
   # Number of discriminators
-  K: 3
+  K: 5
   
   # Which model to use (must match a key in models section)
   # Options: "distilbert", "bert", "roberta", "deberta", "longformer"

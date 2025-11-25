@@ -207,6 +207,10 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if torch.cuda.is_available():
         print(f"Using GPU: {torch.cuda.get_device_name(0)}")
+        # Clear GPU cache before starting
+        torch.cuda.empty_cache()
+        print(f"GPU memory: {torch.cuda.memory_allocated(0) / 1024**3:.2f} GB allocated, "
+              f"{torch.cuda.memory_reserved(0) / 1024**3:.2f} GB reserved")
     else:
         print("Using CPU (GPU not available)")
     
@@ -268,6 +272,10 @@ def main():
                 )
                 print("✓ Consensus training completed")
                 
+                # Clear GPU cache after training
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+                
                 # Predict on all logs
                 print("Running predictions...")
                 results = consensus_predict_all(L, agent_ids, discriminators)
@@ -305,6 +313,10 @@ def main():
                 )
                 print("✓ Supervised training completed")
                 
+                # Clear GPU cache after training
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+                
                 # Predict on all logs
                 print("Running predictions...")
                 results = supervised_predict_all(L, agent_ids, discriminators, use_ensemble=True)
@@ -341,12 +353,26 @@ def main():
             print(f"✗ Error running {sys_type}: {e}")
             import traceback
             traceback.print_exc()
+            # Clear GPU cache on error
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
             if system_type != 'all':
                 return 1
+        finally:
+            # Clean up discriminators to free memory
+            if 'discriminators' in locals():
+                del discriminators
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
     
     print(f"\n{'='*60}")
     print("✓ All systems completed successfully!")
     print(f"{'='*60}")
+    
+    # Final GPU memory cleanup
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+        print(f"Final GPU memory: {torch.cuda.memory_allocated(0) / 1024**3:.2f} GB allocated")
     
     return 0
 
