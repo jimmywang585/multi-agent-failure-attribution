@@ -1,0 +1,103 @@
+# Configuration for Multi-Agent Failure Attribution System
+
+# Model configurations
+models:
+  # Lightweight, fast - use for debugging
+  distilbert:
+    encoder_type: "distilbert-base-uncased"
+    max_length: 512
+    d_model: 768
+    
+  # Classic baseline
+  bert:
+    encoder_type: "bert-base-uncased"
+    max_length: 512
+    d_model: 768
+    
+  # Strong general NLU - good default
+  roberta:
+    encoder_type: "roberta-base"
+    max_length: 512
+    d_model: 768
+    
+  # High performance
+  deberta:
+    encoder_type: "microsoft/deberta-v3-base"
+    max_length: 512
+    d_model: 768
+    
+  # Long context
+  longformer:
+    encoder_type: "allenai/longformer-base-4096"
+    max_length: 4096
+    d_model: 768
+
+# System configuration
+system:
+  # Which system to run: "baseline", "consensus", "supervised", or "all"
+  system_type: "consensus"
+  
+  # Number of discriminators
+  K: 3
+  
+  # Which model to use (must match a key in models section)
+  # Options: "distilbert", "bert", "roberta", "deberta", "longformer"
+  model_name: "distilbert"  # Start with distilbert for fast testing
+  
+  # Dataset split to use
+  dataset_split: "train"
+  
+  # Training hyperparameters
+  hyperparams:
+    # Optimizer
+    lr: 0.001
+    num_epochs: 10
+    loss_tolerance: 1e-5
+    
+    # Supervised rewards
+    alpha_s: 1.0
+    alpha_a: 1.0
+    
+    # Unsupervised rewards
+    beta_pair: 1.0
+    beta_s: 1.0
+    beta_a: 1.0
+    
+    # Stabilization
+    gamma_s: 0.01
+    gamma_a: 0.01
+    lambda_abs: 0.1
+    
+    # Semi-supervised mixing
+    lambda_mix: 0.5
+    
+    # Supervised training
+    use_agent_loss: true
+
+# Data configuration
+data:
+  # Dataset config name: "Algorithm-Generated", "Hand-Crafted", or null to merge both
+  dataset_config: null
+  
+  # Maximum number of logs to use (None = use all)
+  max_logs: null
+  
+  # Use ground truth labels if available (for semi-supervised)
+  use_labels: false
+  
+  # Extract agent IDs from dataset (may need adjustment based on dataset structure)
+  extract_agent_ids_from_steps: true
+
+# Output configuration
+output:
+  # Save trained models
+  save_models: false
+  model_save_dir: "./models"
+  
+  # Save predictions
+  save_predictions: true
+  predictions_save_path: "./predictions.json"
+  
+  # Verbose logging
+  verbose: true
+
