@@ -1,0 +1,738 @@
+[
+  {
+    "step": 5,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "DataVerification_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Probability_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 0,
+    "agent": "PythonProgramming_Expert"
+  },
+  {
+    "step": 7,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 8,
+    "agent": "NumericalAnalysis_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 0,
+    "agent": "AlgorithmDesign_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Statistics_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "Statistics_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Lyrics_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "Filmography_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "Mesopotamian_Number_Systems_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "Python_Expert"
+  },
+  {
+    "step": 7,
+    "agent": "PythonDebugging_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "DataVerification_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 0,
+    "agent": "AudioProcessing_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "DataAnalysis_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "MiddleEasternHistory_Expert"
+  },
+  {
+    "step": 0,
+    "agent": "PythonDebugging_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 9,
+    "agent": "PythonDebugging_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "HistoricalWeatherData_Expert"
+  },
+  {
+    "step": 0,
+    "agent": "Excel_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "JamesBondFilms_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 7,
+    "agent": "WebServing_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 7,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Validation_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Art_Expert"
+  },
+  {
+    "step": 9,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 9,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Validation_Expert"
+  },
+  {
+    "step": 7,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "DataAnalysis_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "RealEstate_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 8,
+    "agent": "API_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "VerificationExpert"
+  },
+  {
+    "step": 6,
+    "agent": "Validation_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "DataAnalysis_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "Python_Expert"
+  },
+  {
+    "step": 9,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Tickets_Pricing_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "Debugging_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "Polish_TV_Series_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Data_Analysis_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "Debugging_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "WebServing_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "ProblemSolving_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "Boggle_Board_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Validation_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 7,
+    "agent": "DataVerification_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "DataVerification_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Scientific_Verification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 0,
+    "agent": "Debugging_Problem_Solving_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 6,
+    "agent": "Research_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "GameTheory_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "WebServing_Expert"
+  },
+  {
+    "step": 62,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 20,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 12,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 20,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 12,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 19,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 30,
+    "agent": "Orchestrator (-> WebSurfer)"
+  },
+  {
+    "step": 11,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 56,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 19,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 12,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 27,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 61,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 119,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 28,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 28,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 19,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 92,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 120,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 36,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 11,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 11,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 1,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "Orchestrator (termination condition)"
+  },
+  {
+    "step": 7,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 15,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 98,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 47,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 19,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 11,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 47,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 12,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 47,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 7,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 24,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 27,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 14,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 12,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 16,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 28,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 47,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 72,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 38,
+    "agent": "Orchestrator (thought)"
+  }
+]

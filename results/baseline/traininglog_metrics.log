@@ -1,0 +1,64 @@
+Loading configuration...
+
+============================================================
+Multi-Agent Failure Attribution System
+============================================================
+System: baseline
+Model: distilbert (distilbert-base-uncased)
+Discriminators: 5
+Dataset split: train
+============================================================
+
+Loading dataset...
+✓ Loaded 184 logs with 202 unique agents (config: merged (Algorithm-Generated + Hand-Crafted))
+Extracting agent IDs from logs...
+✓ Extracted agent IDs for 184 logs
+Extracting ground truth labels...
+✓ Extracted ground truth for 184/184 logs
+Using GPU: NVIDIA A100-SXM4-40GB
+GPU memory: 0.00 GB allocated, 0.00 GB reserved
+
+============================================================
+Running System: BASELINE
+============================================================
+Initializing untrained discriminators...
+2025-11-25 03:04:29.862504: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-25 03:04:29.879982: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1764039869.901055    2613 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1764039869.907412    2613 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1764039869.923654    2613 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764039869.923682    2613 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764039869.923685    2613 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764039869.923687    2613 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-11-25 03:04:29.928342: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+✓ Baseline system ready
+Running predictions...
+✓ Completed 184 predictions
+
+Sample predictions (first 5):
+  Log 0: step=5, agent=Verification_Expert
+  Log 1: step=5, agent=DataVerification_Expert
+  Log 2: step=6, agent=Computer_terminal
+  Log 3: step=1, agent=Probability_Expert
+  Log 4: step=3, agent=Computer_terminal
+
+============================================================
+Metrics for BASELINE
+============================================================
+Valid examples: 184 / 184
+
+Step Accuracy: 0.1250 (23/184)
+Agent Accuracy: 0.2880 (53/184)
+Exact Match (Step + Agent): 0.1250 (23/184)
+Average Step Distance: 7.47
+Median Step Distance: 3.00
+============================================================
+
+✓ Saved predictions to ./predictions.json
+
+============================================================
+✓ All systems completed successfully!
+============================================================
+Final GPU memory: 1.26 GB allocated

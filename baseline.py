@@ -49,15 +49,38 @@ def baseline_initialize(K: int, model_config: Optional[Dict[str, Any]] = None) -
     return discriminators
 
 
+def simple_average(all_p: List[torch.Tensor]) -> torch.Tensor:
+    """
+    Simple averaging of probability distributions.
+    
+    Args:
+        all_p: List of K probability tensors, each of shape [T]
+    
+    Returns:
+        Averaged probability distribution of shape [T]
+    """
+    if not all_p:
+        raise ValueError("all_p cannot be empty")
+    
+    # Stack all distributions: [K, T]
+    p_stacked = torch.stack(all_p, dim=0)  # [K, T]
+    
+    # Average over K discriminators
+    p_avg = p_stacked.mean(dim=0)  # [T]
+    
+    return p_avg
+
+
 def baseline_predict_failure(log_steps: List[Any],
                              agent_ids_i: List[str],
-                             discriminators: List[Discriminator]) -> Tuple[int, str]:
+                             discriminators: List[Discriminator],
+                             use_bt: bool = True) -> Tuple[int, str]:
     """
     Predict failure step and agent using baseline (untrained) discriminators.
     
     Process:
     1. Each discriminator predicts p_k_step (step probability distribution)
-    2. Combine predictions using BT consensus to get p_group
+    2. Combine predictions using BT consensus or simple averaging to get p_group
     3. Find argmax to get predicted step index t_hat
     4. Map to agent ID: i_hat = agent_ids_i[t_hat]
     
@@ -66,6 +89,7 @@ def baseline_predict_failure(log_steps: List[Any],
         agent_ids_i: List of agent IDs corresponding to each step in the log
                     (length should match number of steps in log_steps)
         discriminators: List of K untrained Discriminator instances
+        use_bt: If True, use BT consensus. If False, use simple averaging.
     
     Returns:
         t_hat: Predicted step index (0-indexed)
@@ -94,8 +118,11 @@ def baseline_predict_failure(log_steps: List[Any],
         p_k_step = discriminator.predict_step_distribution(log_steps)
         all_p.append(p_k_step)
     
-    # Step 2: Combine predictions using BT consensus
-    p_group = BT_consensus(all_p)  # [T] tensor
+    # Step 2: Combine predictions using BT consensus or simple averaging
+    if use_bt:
+        p_group = BT_consensus(all_p)  # [T] tensor
+    else:
+        p_group = simple_average(all_p)  # [T] tensor
     
     # Step 3: Find argmax to get predicted step index
     t_hat = torch.argmax(p_group).item()  # Convert to Python int
@@ -112,7 +139,8 @@ def baseline_predict_failure(log_steps: List[Any],
 
 def baseline_predict_all(logs: List[List[Any]],
                         agent_ids_list: List[List[str]],
-                        discriminators: List[Discriminator]) -> List[Tuple[int, str]]:
+                        discriminators: List[Discriminator],
+                        use_bt: bool = True) -> List[Tuple[int, str]]:
     """
     Predict failures for all logs using baseline discriminators.
     
@@ -123,6 +151,7 @@ def baseline_predict_all(logs: List[List[Any]],
         agent_ids_list: List of agent ID lists, one per log
                        (agent_ids_list[i] corresponds to logs[i])
         discriminators: List of K untrained Discriminator instances
+        use_bt: If True, use BT consensus. If False, use simple averaging.
     
     Returns:
         List of (t_hat, i_hat) tuples, one per log
@@ -137,7 +166,8 @@ def baseline_predict_all(logs: List[List[Any]],
         t_hat, i_hat = baseline_predict_failure(
             logs[i],
             agent_ids_list[i],
-            discriminators
+            discriminators,
+            use_bt=use_bt
         )
         results.append((t_hat, i_hat))
     

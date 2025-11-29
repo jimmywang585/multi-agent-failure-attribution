@@ -1,0 +1,738 @@
+[
+  {
+    "step": 1,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "DataVerification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "WebServing_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "TheoreticalChemistry_Expert"
+  },
+  {
+    "step": 9,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "DataManipulation_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Geospatial_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "Literary_Analysis_Expert"
+  },
+  {
+    "step": 7,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 7,
+    "agent": "DataVerification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "RecyclingRate_Expert"
+  },
+  {
+    "step": 7,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "AnalyticalReasoning_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "Lyrics_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "StreamingAvailability_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "Mesopotamian_Number_Systems_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "PythonDebugging_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "NYC_Local_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "ChessRules_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "Reviews_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 8,
+    "agent": "Statistics_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 0,
+    "agent": "FinancialData_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Culinary_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "MiddleEasternHistory_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 7,
+    "agent": "DataVerification_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "WebServing_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "FilmCritic_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "Research_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "WebServing_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 7,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Art_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "DataVerification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "PublicationData_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "DataVerification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 5,
+    "agent": "Validation_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Bioinformatics_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Validation_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Validation_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "DataAnalysis_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 9,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 0,
+    "agent": "Whitney_Collection_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "InformationExtraction_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Web_Design_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 7,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 9,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 0,
+    "agent": "MusicHistorian_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Statistics_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 7,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 3,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 6,
+    "agent": "DataVerification_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Tickets_Pricing_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "Literature_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "Debugging_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Polish_TV_Series_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Data_Analysis_Expert"
+  },
+  {
+    "step": 5,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "Debugging_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "WebServing_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "Culinary_Awards_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 6,
+    "agent": "Validation_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Neurology_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 9,
+    "agent": "Wikipedia_Editor_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "Geography_Expert"
+  },
+  {
+    "step": 4,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "GIS_DataAnalysis_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 1,
+    "agent": "DebuggingTesting_Expert"
+  },
+  {
+    "step": 2,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 7,
+    "agent": "StreamingService_Expert"
+  },
+  {
+    "step": 8,
+    "agent": "Computer_terminal"
+  },
+  {
+    "step": 8,
+    "agent": "Verification_Expert"
+  },
+  {
+    "step": 3,
+    "agent": "Literature_Expert"
+  },
+  {
+    "step": 1,
+    "agent": "GameTheory_Expert"
+  },
+  {
+    "step": 6,
+    "agent": "WebServing_Expert"
+  },
+  {
+    "step": 32,
+    "agent": "FileSurfer"
+  },
+  {
+    "step": 32,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 82,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 16,
+    "agent": "Orchestrator (termination condition)"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 38,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 0,
+    "agent": "human"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 14,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 82,
+    "agent": "Assistant"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 35,
+    "agent": "FileSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 33,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 124,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 20,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 38,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 19,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 18,
+    "agent": "Orchestrator (-> WebSurfer)"
+  },
+  {
+    "step": 16,
+    "agent": "Assistant"
+  },
+  {
+    "step": 13,
+    "agent": "Orchestrator (-> WebSurfer)"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "Orchestrator (termination condition)"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 39,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 8,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 6,
+    "agent": "Orchestrator (-> WebSurfer)"
+  },
+  {
+    "step": 44,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 96,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 27,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 33,
+    "agent": "Orchestrator (-> WebSurfer)"
+  },
+  {
+    "step": 3,
+    "agent": "Orchestrator (-> WebSurfer)"
+  },
+  {
+    "step": 16,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 13,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 12,
+    "agent": "Assistant"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 80,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 8,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 12,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 5,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 91,
+    "agent": "Orchestrator (thought)"
+  },
+  {
+    "step": 4,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 30,
+    "agent": "WebSurfer"
+  },
+  {
+    "step": 39,
+    "agent": "WebSurfer"
+  }
+]

@@ -223,14 +223,25 @@ def supervised_predict_failure(log_steps: List[Any],
                         f"number of steps ({num_steps})")
     
     if use_ensemble:
-        # Ensemble using BT consensus (same as baseline)
+        # Ensemble using BT consensus or simple averaging
         all_p = []
         
         for discriminator in discriminators:
             p_k_step = discriminator.predict_step_distribution(log_steps)
             all_p.append(p_k_step)
         
-        p_group = BT_consensus(all_p)  # [T] tensor
+        # Check if we should use simple averaging instead of BT
+        use_bt = True  # Default to BT consensus
+        if hasattr(supervised_predict_failure, '_use_simple_avg'):
+            use_bt = not supervised_predict_failure._use_simple_avg
+        
+        if use_bt:
+            p_group = BT_consensus(all_p)  # [T] tensor
+        else:
+            # Simple averaging
+            p_stacked = torch.stack(all_p, dim=0)  # [K, T]
+            p_group = p_stacked.mean(dim=0)  # [T]
+        
         t_hat = torch.argmax(p_group).item()
     else:
         # Use only the first discriminator

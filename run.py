@@ -242,8 +242,10 @@ def main():
                 
                 # Predict on all logs
                 print("Running predictions...")
-                results = baseline_predict_all(L, agent_ids, discriminators)
-                print(f"✓ Completed {len(results)} predictions")
+                use_bt = data_config.get('use_bt_consensus', True)  # Default to BT
+                results = baseline_predict_all(L, agent_ids, discriminators, use_bt=use_bt)
+                aggregation_method = "BT consensus" if use_bt else "simple averaging"
+                print(f"✓ Completed {len(results)} predictions (using {aggregation_method})")
                 
             elif sys_type == SYSTEM_CONSENSUS:
                 # System 1: Online Consensus Training
@@ -319,8 +321,13 @@ def main():
                 
                 # Predict on all logs
                 print("Running predictions...")
+                use_bt = data_config.get('use_bt_consensus', True)  # Default to BT
+                # Set flag for supervised prediction
+                import supervised_training
+                supervised_training.supervised_predict_failure._use_simple_avg = not use_bt
                 results = supervised_predict_all(L, agent_ids, discriminators, use_ensemble=True)
-                print(f"✓ Completed {len(results)} predictions")
+                aggregation_method = "BT consensus" if use_bt else "simple averaging"
+                print(f"✓ Completed {len(results)} predictions (using {aggregation_method})")
             
             # Show sample predictions
             if results:

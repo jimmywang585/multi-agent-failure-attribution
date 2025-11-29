@@ -51,7 +51,7 @@ system:
   hyperparams:
     # Optimizer
     lr: 0.001
-    num_epochs: 10
+    num_epochs: 100
     loss_tolerance: 1e-5
     
     # Supervised rewards

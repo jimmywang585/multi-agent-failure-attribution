@@ -1,0 +1,74 @@
+Loading configuration...
+
+============================================================
+Multi-Agent Failure Attribution System
+============================================================
+System: supervised
+Model: distilbert (distilbert-base-uncased)
+Discriminators: 5
+Dataset split: train
+============================================================
+
+Loading dataset...
+README.md: 1.77kB [00:00, 8.98MB/s]
+Algorithm-Generated.parquet: 100% 625k/625k [00:00<00:00, 1.02MB/s]
+Generating train split: 100% 126/126 [00:00<00:00, 3302.31 examples/s]
+Hand-Crafted.parquet: 100% 1.27M/1.27M [00:00<00:00, 3.28MB/s]
+Generating train split: 100% 58/58 [00:00<00:00, 3520.70 examples/s]
+✓ Loaded 184 logs with 202 unique agents (config: merged (Algorithm-Generated + Hand-Crafted))
+Extracting agent IDs from logs...
+✓ Extracted agent IDs for 184 logs
+Extracting ground truth labels...
+✓ Extracted ground truth for 184/184 logs
+Using GPU: NVIDIA A100-SXM4-40GB
+GPU memory: 0.00 GB allocated, 0.00 GB reserved
+
+============================================================
+Running System: SUPERVISED
+============================================================
+Training discriminators with supervised learning...
+tokenizer_config.json: 100% 48.0/48.0 [00:00<00:00, 502kB/s]
+config.json: 100% 483/483 [00:00<00:00, 5.36MB/s]
+vocab.txt: 100% 232k/232k [00:00<00:00, 7.81MB/s]
+tokenizer.json: 100% 466k/466k [00:00<00:00, 14.4MB/s]
+2025-11-29 02:05:45.679215: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-29 02:05:45.696394: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1764381945.717299    2948 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1764381945.723730    2948 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1764381945.739693    2948 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764381945.739717    2948 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764381945.739720    2948 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764381945.739722    2948 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-11-29 02:05:45.744499: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+model.safetensors: 100% 268M/268M [00:00<00:00, 355MB/s]
+✓ Supervised training completed
+Running predictions...
+✓ Completed 184 predictions
+
+Sample predictions (first 5):
+  Log 0: step=1, agent=Verification_Expert
+  Log 1: step=5, agent=DataVerification_Expert
+  Log 2: step=2, agent=WebServing_Expert
+  Log 3: step=5, agent=TheoreticalChemistry_Expert
+  Log 4: step=9, agent=Computer_terminal
+
+============================================================
+Metrics for SUPERVISED
+============================================================
+Valid examples: 184 / 184
+
+Step Accuracy: 0.1413 (26/184)
+Agent Accuracy: 0.2989 (55/184)
+Exact Match (Step + Agent): 0.1359 (25/184)
+Average Step Distance: 7.62
+Median Step Distance: 3.00
+============================================================
+
+✓ Saved predictions to ./predictions.json
+
+============================================================
+✓ All systems completed successfully!
+============================================================
+Final GPU memory: 2.53 GB allocated
